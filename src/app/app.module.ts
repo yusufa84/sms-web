@@ -9,7 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AuthService } from 'app/services/auth.service';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-// import { EnsureAuthenticated } from './services/ensure-authenticated.service';
+import { EnsureAuthenticated } from './services/ensure-authenticated.service';
 
 @NgModule({
   declarations: [
@@ -24,10 +24,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     HttpModule,
     RouterModule.forRoot ([
       { path: 'login', component: LoginComponent},
-      { path: 'dashboard', component: DashboardComponent}
+      { path: 'dashboard', component: DashboardComponent, canActivate: [EnsureAuthenticated]}
     ])
   ],
-  providers: [AuthService],
+  providers: [AuthService, EnsureAuthenticated],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
