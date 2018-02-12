@@ -10,8 +10,8 @@
 </section>
 <!-- End Top Header_Area -->
 <!-- Header_Area -->
-<nav class="navbar navbar-default header_aera" id="main_navbar">
-    <div class="container">
+<nav class="navbar navbar-default header_area" id="main_navbar">
+    <div class="container container_area" style="min-height: 101px">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="col-md-2 p0">
             <div class="navbar-header">
@@ -26,7 +26,7 @@
         </div>
         
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="col-md-10 p0">
+        <div class="col-md-10 p0" *ngIf="isLoggedIn">
             <div class="collapse navbar-collapse" id="min_navbar">
                
                 <ul class="nav navbar-nav navbar-right">
