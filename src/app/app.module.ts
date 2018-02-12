@@ -10,13 +10,15 @@ import { HeaderComponent } from './components/header/header.component';
 import { AuthService } from 'app/services/auth.service';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EnsureAuthenticated } from './services/ensure-authenticated.service';
+import { LogoutComponent } from './components/logout/logout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HeaderComponent,
-    DashboardComponent
+    DashboardComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,8 @@ import { EnsureAuthenticated } from './services/ensure-authenticated.service';
     HttpModule,
     RouterModule.forRoot ([
       { path: 'login', component: LoginComponent},
-      { path: 'dashboard', component: DashboardComponent, canActivate: [EnsureAuthenticated]}
+      { path: 'dashboard', component: DashboardComponent, canActivate: [EnsureAuthenticated]},
+      { path: 'logout', component: LogoutComponent, canActivate: [EnsureAuthenticated]}
     ])
   ],
   providers: [AuthService, EnsureAuthenticated],

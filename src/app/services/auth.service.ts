@@ -30,4 +30,14 @@ export class AuthService {
     });
     return this.http.get(url, {headers: headers}).toPromise();
   }
+
+  //logout a user
+  logout(token): Promise<any> {
+    let url: string = `${this.BASE_URL}/logout`;
+    let headers: Headers = new Headers({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`
+    });
+    return this.http.get(url, {headers: headers}).toPromise();
+  }
 }

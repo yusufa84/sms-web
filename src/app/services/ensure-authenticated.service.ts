@@ -8,8 +8,7 @@ export class EnsureAuthenticated implements CanActivate {
   canActivate(): boolean {
     if (localStorage.getItem('token')) {
       return true;
-    }
-    else {
+    } else {
       this.router.navigateByUrl('/login');
       return false;
     }
